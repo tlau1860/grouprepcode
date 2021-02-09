@@ -1,7 +1,7 @@
 """
-This is a python adaptation of the latent group model (https://github.com/sjgershm/LGM).
+This is a python adaptation of the latent group model (https://github.com/sjgershm/LGM)
 It is 1-indexed, so C needs to be 1-indexed (e.g., if v is 2, C should be filled with 1's and 2's).
-Uncomment the bottom to see an example.
+Uncomment the part at the bottom and run to see an example.
 
 USAGE:
     [P, pz, Z] = lgmDiscrete(C, v, alpha)
@@ -153,35 +153,6 @@ def lgmDiscrete(C,v,alpha):
     return P, pz, Z
 
 
-def sameGroupP(n, prob, part):
-    """
-    outputs the upper triangle of a matrix for all agents
-    constituting of the probability that those two are in the same group
-    (marginal posterior proabilities of relevant partitions)
-    """
-
-    A = np.zeros([n,n])
-    for a in range(n): # first diad
-
-        for b in range(n):
-            if a == b:
-                A[a, b] = 1
-            elif a<b:
-                # print len(part)
-                for i in range(len(part)):
-                    # print('i am in j ', len(part[i]))
-                    for j in range(len(part[i])):
-                        # print('yes before in ', part[i][j])
-                        if (a+1) in part[i][j] and (b+1) in part[i][j]:
-                            # print('yes im in ', part[i][j])
-                            A[a, b] += prob[i]
-                            # print ('a is ', a)
-                            # print('b is ', b)
-                            # print 'added'
-
-    return A
-
-
 # Uncomment below and run to see example.
 # C = np.array([[2,2,1], [1,1,2], [2,1,2], [2,1,2]])
 # v = 2
@@ -195,6 +166,3 @@ def sameGroupP(n, prob, part):
 # print (pz)
 # print ('\n'"Partitions")
 # pprint(Z)
-
-# A = sameGroupP(4, pz, Z)
-# print A
