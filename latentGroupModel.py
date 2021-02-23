@@ -1,6 +1,6 @@
 """
-This is a python adaptation of the latent group model (https://github.com/sjgershm/LGM)
-It is 1-indexed, so C needs to be 1-indexed (e.g., if v is 2, C should be filled with 1's and 2's).
+This is a python adaptation of the latent group model.
+It is 1-indexed, so C needs to be 1-indexed (e.g., if v is 2, C should have 1's and 2's).
 Uncomment the part at the bottom and run to see an example.
 
 USAGE:
@@ -9,12 +9,12 @@ USAGE:
 INPUTS:
     C - An array of discrete choices on N trials made by M rows of agents
     v - number of options on each trial
-    alpha - concentration parameter Defaults to np.linspace(1e-5,10,6)
+    alpha - concentration parameter. Defaults to np.linspace(1e-5,10,6)
 
 OUTPUTS:
-    P - [M x N x V] array of choice probabilities
+    P - [M x N x v] array of choice probabilities
     pz - Probability of each partition
-    Z - Corresponding partitions
+    Z - Corresponding partitions to pz
 
 tlau, Feb 2021
 """
