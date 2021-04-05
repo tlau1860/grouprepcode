@@ -7,12 +7,15 @@ USAGE:
     [P, pz, Z] = lgmDiscrete(C, v, alpha)
 
 INPUTS:
-    C - An array of discrete choices on N trials made by M rows of agents
+    C - An np.array of discrete choices on N trials made by M rows of agents
+        Example: C = np.array([[2,2,1], [1,1,2], [2,1,2], [2,1,2]])
     v - number of options on each trial
-    alpha - concentration parameter. Defaults to np.linspace(1e-5,10,6)
+        Example: v = 2
+    alpha - concentration parameter as an np.array. Defaults to np.linspace(1e-5,10,6)
+        Example: alpha = np.array([2])
 
 OUTPUTS:
-    P - [M x N x v] array of choice probabilities
+    P - [M x N x v] array of choice probabilities for each agent on each trial
     pz - Probability of each partition
     Z - Corresponding partitions to pz
 
@@ -153,7 +156,7 @@ def lgmDiscrete(C,v,alpha):
     return P, pz, Z
 
 
-# Uncomment below and run to see example.
+## Uncomment below and run to see example.
 # C = np.array([[2,2,1], [1,1,2], [2,1,2], [2,1,2]])
 # v = 2
 # alpha = np.array([2])
