@@ -1,7 +1,7 @@
 
 def sameGroupP(n, prob, part):
     """
-    Calculates marginal posterior probabilities of relevant partitions for each possible agent pairing
+    For each possible agent pairing, calculate marginal posterior probability of relevant partitions 
 
     INPUTS
     n - number of agents
@@ -9,7 +9,7 @@ def sameGroupP(n, prob, part):
     part - Z output from lgmDiscrete
 
     OUTPUTS
-    A - upper triangle of an n x n number of agents matrix where [i,j] is the probability that agents i and j are in the same latent group
+    A - upper triangle of an n x n number of agents adjacency matrix where [i,j] is the probability that agents i and j are in the same latent group
 
     """
 
