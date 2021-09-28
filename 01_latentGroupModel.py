@@ -50,9 +50,8 @@ def SetPartition(N):
 
 def crpLogProp(T, alpha):
     """
-    logp = crp_logprob(T,alpha)
     Log probability of a partition under the CRP.
-    USAGE: logp = crp_logprob(T,alpha)
+    USAGE: logp = crpLogProb(T,alpha)
     INPUTS:
       T - vector of counts for each group in the partition.
       alpha - concentration parameter
@@ -61,7 +60,7 @@ def crpLogProp(T, alpha):
     K = len(T[0])
     N = sum(T[0])
     combinedvector = np.append(T, alpha)
-    prob = K*np.log(alpha) + np.sum(scipy.special.gammaln(combinedvector)) - scipy.special.gammaln(sum([N],alpha))
+    prob = K * np.log(alpha) + np.sum(scipy.special.gammaln(combinedvector)) - scipy.special.gammaln(sum([N],alpha))
     return prob
 
 
